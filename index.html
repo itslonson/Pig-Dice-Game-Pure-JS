@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <!-- Ionic Icons -->
+    <link
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="styles/style.css" />
+    <!-- Modal Styles -->
+    <link type="text/css" rel="stylesheet" href="styles/modal.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
+
+    <title>Игра "Pig"</title>
+  </head>
+
+  <body>
+    <div class="wrapper clearfix">
+      <div class="player-0-panel active">
+        <div class="player-name" id="name-0"></div>
+        <div class="player-score" id="score-0"></div>
+        <div class="player-current-box">
+          <div class="player-current-label">Текущий</div>
+          <div class="player-current-score" id="current-0"></div>
+        </div>
+      </div>
+
+      <div class="player-1-panel">
+        <div class="player-name" id="name-1"></div>
+        <div class="player-score" id="score-1"></div>
+        <div class="player-current-box">
+          <div class="player-current-label">Текущий</div>
+          <div class="player-current-score" id="current-1"></div>
+        </div>
+      </div>
+
+      <button class="btn-new">
+        <i class="ion-ios-plus-outline"></i>Новая Игра
+      </button>
+      <button class="btn-info" data-target="simpleModal_4" data-toggle="modal">
+        <i class="ion-ios-information-outline"></i>Правила
+      </button>
+      <button class="btn-roll"><i class="ion-ios-loop"></i>Бросить</button>
+      <button class="btn-hold">
+        <i class="ion-ios-download-outline"></i>Пасс
+      </button>
+
+      <input type="number" placeholder="Конец при" class="final-score" />
+
+      <img src="public/images/dice-5.png" alt="Dice" class="dice" />
+
+      <div id="simpleModal_4" class="modal">
+        <div class="modal-window large">
+          <span class="close" data-dismiss="modal">&times;</span>
+          <h3 class="text-center">Правила игры</h3>
+
+          <p>- Игра расчитана на двух игроков и играется ходами;</p>
+          <p>
+            - Каждый ход, игрок может бросить кубик столько раз, сколько он
+            захочет, каждый бросок засчитывается в текущий счет раунда;
+          </p>
+          <p>
+            - Однако, если игроку выпадает <b>1</b>, то он теряет все свои
+            текущие очки в ходе и наступает очередь другого игрока бросать
+            кубик;
+          </p>
+          <p>
+            - Игрок может выбрать опцию <b>"Пасс"</b>, которая заканчивает его
+            ход, сохраняя и добавляя его текущий счет к общему счету очков,
+            после этого наступает ход другого игрока;
+          </p>
+          <p>
+            - Игрок, первым набравший указанное число очков в поле для ввода или
+            100, в общем счете, выигрывает игру.
+          </p>
+
+          <button data-dismiss="modal" class="btn-agree">Понятно</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+    <script src="js/modal.js"></script>
+  </body>
+</html>
